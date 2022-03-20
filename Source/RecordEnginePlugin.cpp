@@ -33,7 +33,16 @@ RecordEnginePlugin::~RecordEnginePlugin()
 
 }
 
-String RecordEnginePlugin::getEngineID() const 
+
+RecordEngineManager* RecordEnginePlugin::getEngineManager()
+{
+	RecordEngineManager* man = new RecordEngineManager("CUSTOM", "Custom Format",
+		&(engineFactory<RecordEnginePlugin>));
+	
+	return man;
+}
+
+String RecordEnginePlugin::getEngineId() const 
 {
 	return "CUSTOMENGINE";
 }

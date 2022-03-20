@@ -55,7 +55,7 @@ extern "C" EXPORT int getPluginInfo(int index, Plugin::PluginInfo* info)
 	case 0:
 
 		info->type = Plugin::Type::RECORD_ENGINE;
-		info->recordEngine.name = "Custom Engine"; // <---- update this
+		info->recordEngine.name = "Custom Format"; // <---- update this
 		info->recordEngine.creator = &(Plugin::createRecordEngine<RecordEnginePlugin>);
 		break;
 

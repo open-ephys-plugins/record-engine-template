@@ -36,8 +36,11 @@ public:
 	/** Destructor */
 	~RecordEnginePlugin();
 
+	/** Launches the manager for this Record Engine, and instantiates any parameters */
+	static RecordEngineManager* getEngineManager();
+
 	/** Returns a string that can be used to identify this record engine*/
-	String getEngineID() const;
+	String getEngineId() const;
 
 	/** Called when recording starts to open all needed files */
 	void openFiles(File rootFolder, int experimentNumber, int recordingNumber);
