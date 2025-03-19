@@ -29,46 +29,44 @@
 class RecordEnginePlugin : public RecordEngine
 {
 public:
+    /** Constructor */
+    RecordEnginePlugin();
 
-	/** Constructor */
-	RecordEnginePlugin();
-	
-	/** Destructor */
-	~RecordEnginePlugin();
+    /** Destructor */
+    ~RecordEnginePlugin();
 
-	/** Launches the manager for this Record Engine, and instantiates any parameters */
-	static RecordEngineManager* getEngineManager();
+    /** Launches the manager for this Record Engine, and instantiates any parameters */
+    static RecordEngineManager* getEngineManager();
 
-	/** Returns a string that can be used to identify this record engine*/
-	String getEngineId() const;
+    /** Returns a string that can be used to identify this record engine*/
+    String getEngineId() const;
 
-	/** Called when recording starts to open all needed files */
-	void openFiles(File rootFolder, int experimentNumber, int recordingNumber);
+    /** Called when recording starts to open all needed files */
+    void openFiles (File rootFolder, int experimentNumber, int recordingNumber);
 
-	/** Called when recording stops to close all files and do all the necessary cleanup */
-	void closeFiles();
+    /** Called when recording stops to close all files and do all the necessary cleanup */
+    void closeFiles();
 
-	/** Write continuous data for a channel, including synchronized float timestamps for each sample */
-	void writeContinuousData(int writeChannel, 
-						       int realChannel, 
-							   const float* dataBuffer, 
-							   const double* ftsBuffer, 
-							   int size);
+    /** Write continuous data for a channel, including synchronized float timestamps for each sample */
+    void writeContinuousData (int writeChannel,
+                              int realChannel,
+                              const float* dataBuffer,
+                              const double* ftsBuffer,
+                              int size);
 
-	/** Write a single event to disk (TTL or TEXT) */
-	void writeEvent(int eventChannel, 
-				    const EventPacket& event);
+    /** Write a single event to disk (TTL or TEXT) */
+    void writeEvent (int eventChannel,
+                     const EventPacket& event);
 
-	/** Write a spike to disk */
-	void writeSpike(int electrodeIndex,
-		const Spike* spike);
+    /** Write a spike to disk */
+    void writeSpike (int electrodeIndex,
+                     const Spike* spike);
 
-	/** Write the timestamp sync text messages to disk*/
-	void writeTimestampSyncText(uint64 streamId, 
-								int64 timestamp, 
-								float sourceSampleRate, 
-								String text);
-
+    /** Write the timestamp sync text messages to disk*/
+    void writeTimestampSyncText (uint64 streamId,
+                                 int64 timestamp,
+                                 float sourceSampleRate,
+                                 String text);
 };
 
 #endif

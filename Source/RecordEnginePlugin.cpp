@@ -23,68 +23,54 @@
 
 #include "RecordEnginePlugin.h"
 
-RecordEnginePlugin::RecordEnginePlugin() 
-{ 
-
+RecordEnginePlugin::RecordEnginePlugin()
+{
 }
-	
+
 RecordEnginePlugin::~RecordEnginePlugin()
 {
-
 }
-
 
 RecordEngineManager* RecordEnginePlugin::getEngineManager()
 {
-	RecordEngineManager* man = new RecordEngineManager("CUSTOM", "Custom Format",
-		&(engineFactory<RecordEnginePlugin>));
-	
-	return man;
+    RecordEngineManager* man = new RecordEngineManager ("CUSTOM", "Custom Format", &(engineFactory<RecordEnginePlugin>) );
+
+    return man;
 }
 
-String RecordEnginePlugin::getEngineId() const 
+String RecordEnginePlugin::getEngineId() const
 {
-	return "CUSTOMENGINE";
+    return "CUSTOMENGINE";
 }
 
-
-void RecordEnginePlugin::openFiles(File rootFolder, int experimentNumber, int recordingNumber)
+void RecordEnginePlugin::openFiles (File rootFolder, int experimentNumber, int recordingNumber)
 {
-
 }
 
 void RecordEnginePlugin::closeFiles()
 {
-
 }
 
-void RecordEnginePlugin::writeContinuousData(int writeChannel, 
-											   int realChannel, 
-											   const float* dataBuffer, 
-											   const double* ftsBuffer, 
-											   int size)
+void RecordEnginePlugin::writeContinuousData (int writeChannel,
+                                              int realChannel,
+                                              const float* dataBuffer,
+                                              const double* ftsBuffer,
+                                              int size)
 {
-
 }
 
-void RecordEnginePlugin::writeEvent(int eventChannel, const EventPacket& event)
+void RecordEnginePlugin::writeEvent (int eventChannel, const EventPacket& event)
 {
-
 }
 
-
-void RecordEnginePlugin::writeSpike(int electrodeIndex, const Spike* spike)
+void RecordEnginePlugin::writeSpike (int electrodeIndex, const Spike* spike)
 {
-
 }
 
-
-void RecordEnginePlugin::writeTimestampSyncText(
-	uint64 streamId, 
-	int64 timestamp, 
-	float sourceSampleRate, 
-	String text)
+void RecordEnginePlugin::writeTimestampSyncText (
+    uint64 streamId,
+    int64 timestamp,
+    float sourceSampleRate,
+    String text)
 {
-
 }
-
