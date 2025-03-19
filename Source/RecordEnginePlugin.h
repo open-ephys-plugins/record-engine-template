@@ -67,6 +67,9 @@ public:
                                  int64 timestamp,
                                  float sourceSampleRate,
                                  String text);
+
+	/** Sets an engine parameter */
+	void setParameter (EngineParameter& parameter);
 };
 
 #endif

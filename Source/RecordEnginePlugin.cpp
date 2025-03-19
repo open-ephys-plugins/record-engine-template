@@ -74,3 +74,7 @@ void RecordEnginePlugin::writeTimestampSyncText (
     String text)
 {
 }
+
+void RecordEnginePlugin::setParameter (EngineParameter& parameter)
+{
+}
